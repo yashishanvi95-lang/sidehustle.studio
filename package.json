@@ -1,0 +1,8 @@
+{
+  "name": "sidehustle-ai-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local-first writing assistant powered by an open-weight model through Ollama.",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

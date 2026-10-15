@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101323" />
+  <title>SideHustle AI Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="SideHustle AI Studio home"><span class="brand-mark">✦</span><span>sidehustle<span class="brand-light">.studio</span></span></a>
+    <div class="topbar-right"><span class="privacy-dot"></span><span>Local AI mode</span><span class="open-badge">OPEN SOURCE</span></div>
+  </header>
+
+  <main class="layout">
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR TINY BUSINESS, BIGGER IDEAS</div>
+      <h1>Good ideas deserve<br />a <span class="gradient-text">head start.</span></h1>
+      <p class="hero-copy">Your pocket-sized AI partner for the everyday work of running a side hustle. Make better copy, faster — with an open-weight model running on your own machine.</p>
+      <div class="trust-row"><span>✦ No per-prompt API bill</span><span>⌂ Your prompts stay local</span><span>↗ Swap models anytime</span></div>
+    </section>
+
+    <section class="workspace" aria-label="AI content generator">
+      <aside class="sidebar">
+        <div class="sidebar-label">WORKSPACE</div>
+        <button class="tool active" data-mode="product"><span class="tool-icon">✧</span><span><b>Product listing</b><small>Turn features into sales</small></span></button>
+        <button class="tool" data-mode="social"><span class="tool-icon">◎</span><span><b>Social caption</b><small>Give your post a hook</small></span></button>
+        <button class="tool" data-mode="client"><span class="tool-icon">↗</span><span><b>Client message</b><small>Sound clear and confident</small></span></button>
+        <div class="sidebar-note"><span class="note-icon">✳</span><div><b>Built for small wins</b><p>Less blank-page panic. More time for the work you love.</p></div></div>
+      </aside>
+
+      <div class="editor-panel">
+        <div class="panel-heading"><div><div class="panel-kicker">CONTENT WORKBENCH</div><h2 id="form-title">Write a product listing</h2></div><span class="step-pill">01 <span>/</span> CREATE</span></div>
+        <p class="panel-description" id="form-description">Give your product the words it deserves. Add a few details and let the model draft the rest.</p>
+        <form id="generator-form">
+          <label for="business">What is your hustle called? <span>OPTIONAL</span></label>
+          <input id="business" name="business" placeholder="e.g. Moonbeam handmade candles" maxlength="100" />
+
+          <label for="details" id="details-label">Tell us about the product <span class="required">REQUIRED</span></label>
+          <textarea id="details" name="details" rows="5" required maxlength="1800" placeholder="Soy wax candles with cozy vanilla and sandalwood notes, handmade in small batches..."></textarea>
+          <div class="input-meta"><span id="hint">Mention features, audience, price, or what makes it special.</span><span id="char-count">0 / 1800</span></div>
+
+          <div class="two-col">
+            <div><label for="tone">TONE</label><select id="tone"><option value="Friendly and warm">Friendly & warm</option><option value="Professional and polished">Professional</option><option value="Playful and witty">Playful & witty</option><option value="Premium and elegant">Premium & elegant</option><option value="Simple and direct">Simple & direct</option></select></div>
+            <div><label for="length">LENGTH</label><select id="length"><option value="Short">Short</option><option value="Medium" selected>Medium</option><option value="Detailed">Detailed</option></select></div>
+          </div>
+          <div class="form-actions"><button type="button" class="clear-btn" id="clear-btn">Clear</button><button class="generate-btn" id="generate-btn" type="submit"><span>✦</span> Generate draft <span class="button-arrow">↗</span></button></div>
+        </form>
+      </div>
+
+      <section class="result-panel" aria-live="polite">
+        <div class="result-top"><div><div class="panel-kicker">YOUR FIRST DRAFT</div><h2>Made with a little help.</h2></div><span class="sparkle">✳</span></div>
+        <div id="result-content" class="result-content empty-state"><div class="empty-illustration"><div class="paper paper-back"></div><div class="paper paper-front"><span>✦</span><i></i><i></i><i class="short-line"></i></div><div class="tiny-star star-a">✧</div><div class="tiny-star star-b">✦</div></div><h3>Your next great draft starts here.</h3><p>Choose a tool, add your details, and your local AI model will help you get past the blank page.</p><div class="empty-tags"><span>Product copy</span><span>Captions</span><span>Client notes</span></div></div>
+        <div class="result-footer"><span class="model-status"><span class="status-dot"></span><span id="model-status-text">Waiting for local model</span></span><button id="copy-btn" class="copy-btn" disabled>▢ Copy draft</button></div>
+      </section>
+    </section>
+
+    <section class="bottom-strip"><div class="bottom-item"><span class="bottom-icon">⌂</span><div><b>Your machine, your data</b><p>Prompts are sent to your local Ollama instance, not a hosted AI API.</p></div></div><div class="bottom-item"><span class="bottom-icon">⟲</span><div><b>Model freedom</b><p>Use an open-weight model that fits your hardware and your workflow.</p></div></div><div class="bottom-item"><span class="bottom-icon">♡</span><div><b>Made for the side hustle</b><p>Useful first drafts without another subscription to manage.</p></div></div></section>
+    <footer><span>✦ sidehustle.studio</span><span>Made for makers, freelancers & tiny teams.</span><span class="footer-right">OPEN BY DESIGN · LOCAL BY DEFAULT</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
